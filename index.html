@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+    input, button {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Result Checker</h2>
+    <input type="text" id="studentId" placeholder="Enter Student ID" />
+    <button onclick="checkResult()">Check Result</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const results = {
+      "NSU001": "Math: 85, English: 76, Physics: 90",
+      "NSU002": "Math: 65, English: 80, Physics: 70",
+      "NSU003": "Math: 72, English: 69, Physics: 75"
+    };
+
+    function checkResult() {
+      const id = document.getElementById("studentId").value.trim().toUpperCase();
+      const result = results[id];
+      document.getElementById("result").innerText = result ? result : "Result not found.";
+    }
+  </script>
+</body>
+</html>
